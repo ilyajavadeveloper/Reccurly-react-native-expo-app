@@ -1,14 +1,14 @@
+import '../global.css'
 import { Text, View } from "react-native";
+import {Link} from "expo-router";
 
-export default function Index() {
+export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-slate-900 px-4">
-      <Text className="text-2xl font-bold text-white mb-2">
-        Recurrly
-      </Text>
-      <Text className="text-base text-slate-400 text-center">
-        NativeWind & Tailwind CSS успешно подключены! 🎉
-      </Text>
-    </View>
+  <View className='flex-1 items-center justify-center bg-background'>
+<Text className='text-xl font-bold text-success'>
+Welcome to Nativewind!
+</Text>
+<Link href='/onboarding' className='mt-4 rounded bg-primary text-white p-4'>Go to onboarding</Link>
+  </View>
   );
 }
