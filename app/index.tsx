@@ -1,17 +1,28 @@
 import '../global.css'
-import { Text, View } from "react-native";
+import { Text, View, Pressable } from "react-native";
 import {Link} from "expo-router";
 
 export default function App() {
   return (
-  <View className='flex-1 items-center justify-center bg-background'>
-<Text className='text-xl font-bold text-success'>
-Welcome to Nativewind!
-</Text>
-<Link href='/onboarding' className='mt-4 rounded bg-primary text-white p-4'>Go to onboarding</Link>
-      <Link href='/(auth)/sign-in' className='mt-4 rounded bg-primary text-white p-4'>Go Sign in</Link>
-      <Link href='/(auth)/sign-up' className='mt-4 rounded bg-primary text-white p-4'>Go Sign up</Link>
-
-  </View>
+    <View className='flex-1 items-center justify-center bg-background px-4'>
+      <Text className='text-xl font-bold text-success mb-2'>
+        Welcome to Nativewind!
+      </Text>
+      <Link href='/onboarding' asChild>
+        <Pressable className='mt-4 w-48 items-center rounded-xl bg-primary p-4 active:opacity-80'>
+          <Text className='text-white font-medium'>Go to onboarding</Text>
+        </Pressable>
+      </Link>
+      <Link href='/(auth)/sign-in' asChild>
+        <Pressable className='mt-4 w-48 items-center rounded-xl bg-primary p-4 active:opacity-80'>
+          <Text className='text-white font-medium'>Go Sign in</Text>
+        </Pressable>
+      </Link>
+      <Link href='/(auth)/sign-up' asChild>
+        <Pressable className='mt-4 w-48 items-center rounded-xl bg-primary p-4 active:opacity-80'>
+          <Text className='text-white font-medium'>Go Sign up</Text>
+        </Pressable>
+      </Link>
+    </View>
   );
 }
